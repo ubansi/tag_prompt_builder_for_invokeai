@@ -22,8 +22,8 @@ class TagPromptBuilderInvocation(BaseInvocation):
 
     def invoke(self, context: InvocationContext) -> StringOutput:
 
+        self.tag_collection.insert(0,self.prefix)
         tags = [tag for tag in self.tag_collection if tag]
-
         text: str = ", ".join(tags)
 
         return StringOutput(value=text)
