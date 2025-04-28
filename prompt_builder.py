@@ -15,17 +15,16 @@ from invokeai.invocation_api import (
     version='1.0.0'
 )
 class TagPromptBuilderInvocation(BaseInvocation):
-    """Build Tag Prompt"""
+    """Concat Tag Prompt"""
 
     prefix: str = InputField(description=FieldDescriptions.metadata_item_label)
-    tagCollection: list[str] = InputField(default=[], description="The collection of string values")
+    tag_collection: list[str] = InputField(default=[], description="The collection of string values")
 
     def invoke(self, context: InvocationContext) -> StringOutput:
 
-        if not self.prefix == "":
-            self.tagCollection.insert(0, self.prefix)
+        tags = [tag for tag in self.tag_collection if tag]
 
-        text: str = ", ".join(self.tagCollection)
+        text: str = ", ".join(tags)
 
         return StringOutput(value=text)
     
@@ -42,6 +41,7 @@ class TagPromptInvocation(BaseInvocation):
 
     tag: str = InputField(description=FieldDescriptions.metadata_item_label)
     weight: float = InputField(description="weight",ge=0,le=2,default=1)
+    active: bool = InputField(default=True,description=FieldDescriptions.metadata_item_label)
 
     def invoke(self, context) -> StringOutput:
 
@@ -49,5 +49,8 @@ class TagPromptInvocation(BaseInvocation):
             tag = self.tag
         else:
             tag: str = f"({self.tag}:{self.weight})"
+
+        if not self.active:
+            return StringOutput(value='')
 
         return StringOutput(value=tag)
