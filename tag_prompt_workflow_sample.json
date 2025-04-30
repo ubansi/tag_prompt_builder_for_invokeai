@@ -1,0 +1,849 @@
+{
+  "name": "Tag Prompt Workflow sample",
+  "author": "",
+  "description": "",
+  "version": "",
+  "contact": "",
+  "tags": "",
+  "notes": "",
+  "exposedFields": [],
+  "meta": {
+    "category": "user",
+    "version": "3.0.0"
+  },
+  "id": "79b1930e-c003-4faa-8898-2f24377f27f9",
+  "form": {
+    "elements": {
+      "root": {
+        "id": "root",
+        "data": {
+          "layout": "column",
+          "children": [
+            "node-field-uEpqTyCTvn"
+          ]
+        },
+        "type": "container"
+      },
+      "node-field-uEpqTyCTvn": {
+        "id": "node-field-uEpqTyCTvn",
+        "type": "node-field",
+        "parentId": "root",
+        "data": {
+          "fieldIdentifier": {
+            "nodeId": "274be02f-683c-4edd-95ec-00a0dff5bb4c",
+            "fieldName": "value"
+          },
+          "settings": {
+            "type": "string-field-config",
+            "component": "input"
+          },
+          "showDescription": true
+        }
+      }
+    },
+    "rootElementId": "root"
+  },
+  "nodes": [
+    {
+      "id": "pos_cond:4M6Wt7aHcW",
+      "type": "invocation",
+      "data": {
+        "id": "pos_cond:4M6Wt7aHcW",
+        "version": "1.2.1",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "sdxl_compel_prompt",
+        "inputs": {
+          "prompt": {
+            "name": "prompt",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "style": {
+            "name": "style",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "original_width": {
+            "name": "original_width",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "original_height": {
+            "name": "original_height",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "crop_top": {
+            "name": "crop_top",
+            "label": "",
+            "description": "",
+            "value": 0
+          },
+          "crop_left": {
+            "name": "crop_left",
+            "label": "",
+            "description": "",
+            "value": 0
+          },
+          "target_width": {
+            "name": "target_width",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "target_height": {
+            "name": "target_height",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "clip": {
+            "name": "clip",
+            "label": "",
+            "description": ""
+          },
+          "clip2": {
+            "name": "clip2",
+            "label": "",
+            "description": ""
+          },
+          "mask": {
+            "name": "mask",
+            "label": "",
+            "description": ""
+          }
+        },
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true
+      },
+      "position": {
+        "x": -625,
+        "y": 575
+      }
+    },
+    {
+      "id": "189c3186-1803-4783-85ae-4df0a2857000",
+      "type": "invocation",
+      "data": {
+        "id": "189c3186-1803-4783-85ae-4df0a2857000",
+        "type": "dynamic_prompt",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": false,
+        "nodePack": "invokeai",
+        "inputs": {
+          "prompt": {
+            "name": "prompt",
+            "label": "",
+            "description": "",
+            "value": "{straight-on|from the side|from behind|from above|from below|looking back|looking up|looking down|high-angle|low-angle}"
+          },
+          "max_prompts": {
+            "name": "max_prompts",
+            "label": "",
+            "description": "",
+            "value": 1
+          },
+          "combinatorial": {
+            "name": "combinatorial",
+            "label": "",
+            "description": "",
+            "value": false
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": 700
+      }
+    },
+    {
+      "id": "64cd712b-d710-4c8d-9f67-40a64d1f57de",
+      "type": "invocation",
+      "data": {
+        "id": "64cd712b-d710-4c8d-9f67-40a64d1f57de",
+        "type": "tag_prompt_builder",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "prefix": {
+            "name": "prefix",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "tag_collection": {
+            "name": "tag_collection",
+            "label": "",
+            "description": "",
+            "value": []
+          }
+        }
+      },
+      "position": {
+        "x": -1600,
+        "y": 575
+      }
+    },
+    {
+      "id": "274be02f-683c-4edd-95ec-00a0dff5bb4c",
+      "type": "invocation",
+      "data": {
+        "id": "274be02f-683c-4edd-95ec-00a0dff5bb4c",
+        "type": "string",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "value": {
+            "name": "value",
+            "label": "",
+            "description": "",
+            "value": "(masterpiece, best quality, super detailed, illustration, animation, smooth shading), girl, metal-frame glasses, black hair, half updo, dark brown eye, small breasts, sharp eyes, dark smile, standing, maid uniform"
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": 475
+      }
+    },
+    {
+      "id": "0e5b3098-c357-4d6c-b4ab-8e3e05daf9e8",
+      "type": "invocation",
+      "data": {
+        "id": "0e5b3098-c357-4d6c-b4ab-8e3e05daf9e8",
+        "type": "dynamic_prompt",
+        "version": "1.0.1",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": false,
+        "nodePack": "invokeai",
+        "inputs": {
+          "prompt": {
+            "name": "prompt",
+            "label": "",
+            "description": "",
+            "value": "{straight-on|side view|rear view|high-angle|low-angle|looking back|looking up|looking down|side-eye|from a high angle|from a low angle}"
+          },
+          "max_prompts": {
+            "name": "max_prompts",
+            "label": "",
+            "description": "",
+            "value": 1
+          },
+          "combinatorial": {
+            "name": "combinatorial",
+            "label": "",
+            "description": "",
+            "value": false
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": 1000
+      }
+    },
+    {
+      "id": "99cb0d45-6ca3-46d7-9cf0-279e0b3acf2b",
+      "type": "invocation",
+      "data": {
+        "id": "99cb0d45-6ca3-46d7-9cf0-279e0b3acf2b",
+        "type": "tag_prompt_builder",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "prefix": {
+            "name": "prefix",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "tag_collection": {
+            "name": "tag_collection",
+            "label": "",
+            "description": "",
+            "value": []
+          }
+        }
+      },
+      "position": {
+        "x": -1125,
+        "y": 650
+      }
+    },
+    {
+      "id": "e9b8c345-8d9f-46fc-9cfe-91b82bc0abb2",
+      "type": "invocation",
+      "data": {
+        "id": "e9b8c345-8d9f-46fc-9cfe-91b82bc0abb2",
+        "version": "1.2.1",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "sdxl_compel_prompt",
+        "inputs": {
+          "prompt": {
+            "name": "prompt",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "style": {
+            "name": "style",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "original_width": {
+            "name": "original_width",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "original_height": {
+            "name": "original_height",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "crop_top": {
+            "name": "crop_top",
+            "label": "",
+            "description": "",
+            "value": 0
+          },
+          "crop_left": {
+            "name": "crop_left",
+            "label": "",
+            "description": "",
+            "value": 0
+          },
+          "target_width": {
+            "name": "target_width",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "target_height": {
+            "name": "target_height",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "clip": {
+            "name": "clip",
+            "label": "",
+            "description": ""
+          },
+          "clip2": {
+            "name": "clip2",
+            "label": "",
+            "description": ""
+          },
+          "mask": {
+            "name": "mask",
+            "label": "",
+            "description": ""
+          }
+        },
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true
+      },
+      "position": {
+        "x": -625,
+        "y": -1275
+      }
+    },
+    {
+      "id": "a52fdffb-bddd-47d6-8248-529ad0b24647",
+      "type": "invocation",
+      "data": {
+        "id": "a52fdffb-bddd-47d6-8248-529ad0b24647",
+        "type": "tag_prompt_builder",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "prefix": {
+            "name": "prefix",
+            "label": "",
+            "description": "",
+            "value": "(masterpiece, best quality, super detailed, illustration, animation, smooth shading)"
+          },
+          "tag_collection": {
+            "name": "tag_collection",
+            "label": "",
+            "description": "",
+            "value": [
+              "1girl",
+              "smile",
+              "roomwear"
+            ]
+          }
+        }
+      },
+      "position": {
+        "x": -1175,
+        "y": -1200
+      }
+    },
+    {
+      "id": "3ea09be1-3a11-441b-85a7-97f94ee30f18",
+      "type": "invocation",
+      "data": {
+        "id": "3ea09be1-3a11-441b-85a7-97f94ee30f18",
+        "version": "1.2.1",
+        "nodePack": "invokeai",
+        "label": "",
+        "notes": "",
+        "type": "sdxl_compel_prompt",
+        "inputs": {
+          "prompt": {
+            "name": "prompt",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "style": {
+            "name": "style",
+            "label": "",
+            "description": "",
+            "value": ""
+          },
+          "original_width": {
+            "name": "original_width",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "original_height": {
+            "name": "original_height",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "crop_top": {
+            "name": "crop_top",
+            "label": "",
+            "description": "",
+            "value": 0
+          },
+          "crop_left": {
+            "name": "crop_left",
+            "label": "",
+            "description": "",
+            "value": 0
+          },
+          "target_width": {
+            "name": "target_width",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "target_height": {
+            "name": "target_height",
+            "label": "",
+            "description": "",
+            "value": 1024
+          },
+          "clip": {
+            "name": "clip",
+            "label": "",
+            "description": ""
+          },
+          "clip2": {
+            "name": "clip2",
+            "label": "",
+            "description": ""
+          },
+          "mask": {
+            "name": "mask",
+            "label": "",
+            "description": ""
+          }
+        },
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true
+      },
+      "position": {
+        "x": -625,
+        "y": -625
+      }
+    },
+    {
+      "id": "93d20e7c-1ac4-47ab-a7f2-291a549f430c",
+      "type": "invocation",
+      "data": {
+        "id": "93d20e7c-1ac4-47ab-a7f2-291a549f430c",
+        "type": "tag_prompt_builder",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "prefix": {
+            "name": "prefix",
+            "label": "",
+            "description": "",
+            "value": "(masterpiece, best quality, super detailed, illustration, animation, smooth shading)"
+          },
+          "tag_collection": {
+            "name": "tag_collection",
+            "label": "",
+            "description": "",
+            "value": [
+              "1girl",
+              "smile",
+              "roomwear"
+            ]
+          }
+        }
+      },
+      "position": {
+        "x": -1200,
+        "y": -575
+      }
+    },
+    {
+      "id": "34dcbecc-956a-4e36-8b81-4d8c5b2e1392",
+      "type": "invocation",
+      "data": {
+        "id": "34dcbecc-956a-4e36-8b81-4d8c5b2e1392",
+        "type": "tag_prompt",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "tag": {
+            "name": "tag",
+            "label": "",
+            "description": "",
+            "value": "1girl"
+          },
+          "weight": {
+            "name": "weight",
+            "label": "",
+            "description": "",
+            "value": 1
+          },
+          "active": {
+            "name": "active",
+            "label": "",
+            "description": "",
+            "value": true
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": -750
+      }
+    },
+    {
+      "id": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+      "type": "invocation",
+      "data": {
+        "id": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+        "type": "collect",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "invokeai",
+        "inputs": {
+          "item": {
+            "name": "item",
+            "label": "",
+            "description": ""
+          }
+        }
+      },
+      "position": {
+        "x": -1675,
+        "y": -500
+      }
+    },
+    {
+      "id": "beb1b546-6d96-42c5-9576-b17e1252beb0",
+      "type": "invocation",
+      "data": {
+        "id": "beb1b546-6d96-42c5-9576-b17e1252beb0",
+        "type": "tag_prompt",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "tag": {
+            "name": "tag",
+            "label": "",
+            "description": "",
+            "value": "smile"
+          },
+          "weight": {
+            "name": "weight",
+            "label": "",
+            "description": "",
+            "value": 1
+          },
+          "active": {
+            "name": "active",
+            "label": "",
+            "description": "",
+            "value": true
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": -500
+      }
+    },
+    {
+      "id": "6f643070-0fb5-4f61-a103-214e2269bac9",
+      "type": "invocation",
+      "data": {
+        "id": "6f643070-0fb5-4f61-a103-214e2269bac9",
+        "type": "tag_prompt",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "tag": {
+            "name": "tag",
+            "label": "",
+            "description": "",
+            "value": "school uniform"
+          },
+          "weight": {
+            "name": "weight",
+            "label": "",
+            "description": "",
+            "value": 1
+          },
+          "active": {
+            "name": "active",
+            "label": "",
+            "description": "",
+            "value": true
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": 0
+      }
+    },
+    {
+      "id": "0c3fd4ed-ff4e-4345-8191-2b2475f0807a",
+      "type": "invocation",
+      "data": {
+        "id": "0c3fd4ed-ff4e-4345-8191-2b2475f0807a",
+        "type": "tag_prompt",
+        "version": "1.0.0",
+        "label": "",
+        "notes": "",
+        "isOpen": true,
+        "isIntermediate": true,
+        "useCache": true,
+        "nodePack": "prompt_builder",
+        "inputs": {
+          "tag": {
+            "name": "tag",
+            "label": "",
+            "description": "",
+            "value": "roomware"
+          },
+          "weight": {
+            "name": "weight",
+            "label": "",
+            "description": "",
+            "value": 1
+          },
+          "active": {
+            "name": "active",
+            "label": "",
+            "description": "",
+            "value": false
+          }
+        }
+      },
+      "position": {
+        "x": -2150,
+        "y": -250
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "reactflow__edge-274be02f-683c-4edd-95ec-00a0dff5bb4cvalue-64cd712b-d710-4c8d-9f67-40a64d1f57deprefix",
+      "type": "default",
+      "source": "274be02f-683c-4edd-95ec-00a0dff5bb4c",
+      "target": "64cd712b-d710-4c8d-9f67-40a64d1f57de",
+      "sourceHandle": "value",
+      "targetHandle": "prefix"
+    },
+    {
+      "id": "reactflow__edge-189c3186-1803-4783-85ae-4df0a2857000collection-64cd712b-d710-4c8d-9f67-40a64d1f57detag_collection",
+      "type": "default",
+      "source": "189c3186-1803-4783-85ae-4df0a2857000",
+      "target": "64cd712b-d710-4c8d-9f67-40a64d1f57de",
+      "sourceHandle": "collection",
+      "targetHandle": "tag_collection"
+    },
+    {
+      "id": "reactflow__edge-0e5b3098-c357-4d6c-b4ab-8e3e05daf9e8collection-99cb0d45-6ca3-46d7-9cf0-279e0b3acf2btag_collection",
+      "type": "default",
+      "source": "0e5b3098-c357-4d6c-b4ab-8e3e05daf9e8",
+      "target": "99cb0d45-6ca3-46d7-9cf0-279e0b3acf2b",
+      "sourceHandle": "collection",
+      "targetHandle": "tag_collection"
+    },
+    {
+      "id": "reactflow__edge-64cd712b-d710-4c8d-9f67-40a64d1f57devalue-99cb0d45-6ca3-46d7-9cf0-279e0b3acf2bprefix",
+      "type": "default",
+      "source": "64cd712b-d710-4c8d-9f67-40a64d1f57de",
+      "target": "99cb0d45-6ca3-46d7-9cf0-279e0b3acf2b",
+      "sourceHandle": "value",
+      "targetHandle": "prefix"
+    },
+    {
+      "id": "reactflow__edge-99cb0d45-6ca3-46d7-9cf0-279e0b3acf2bvalue-pos_cond:4M6Wt7aHcWprompt",
+      "type": "default",
+      "source": "99cb0d45-6ca3-46d7-9cf0-279e0b3acf2b",
+      "target": "pos_cond:4M6Wt7aHcW",
+      "sourceHandle": "value",
+      "targetHandle": "prompt"
+    },
+    {
+      "id": "reactflow__edge-99cb0d45-6ca3-46d7-9cf0-279e0b3acf2bvalue-pos_cond:4M6Wt7aHcWstyle",
+      "type": "default",
+      "source": "99cb0d45-6ca3-46d7-9cf0-279e0b3acf2b",
+      "target": "pos_cond:4M6Wt7aHcW",
+      "sourceHandle": "value",
+      "targetHandle": "style"
+    },
+    {
+      "id": "reactflow__edge-a52fdffb-bddd-47d6-8248-529ad0b24647value-e9b8c345-8d9f-46fc-9cfe-91b82bc0abb2prompt",
+      "type": "default",
+      "source": "a52fdffb-bddd-47d6-8248-529ad0b24647",
+      "target": "e9b8c345-8d9f-46fc-9cfe-91b82bc0abb2",
+      "sourceHandle": "value",
+      "targetHandle": "prompt"
+    },
+    {
+      "id": "reactflow__edge-a52fdffb-bddd-47d6-8248-529ad0b24647value-e9b8c345-8d9f-46fc-9cfe-91b82bc0abb2style",
+      "type": "default",
+      "source": "a52fdffb-bddd-47d6-8248-529ad0b24647",
+      "target": "e9b8c345-8d9f-46fc-9cfe-91b82bc0abb2",
+      "sourceHandle": "value",
+      "targetHandle": "style"
+    },
+    {
+      "id": "reactflow__edge-93d20e7c-1ac4-47ab-a7f2-291a549f430cvalue-3ea09be1-3a11-441b-85a7-97f94ee30f18prompt",
+      "type": "default",
+      "source": "93d20e7c-1ac4-47ab-a7f2-291a549f430c",
+      "target": "3ea09be1-3a11-441b-85a7-97f94ee30f18",
+      "sourceHandle": "value",
+      "targetHandle": "prompt"
+    },
+    {
+      "id": "reactflow__edge-93d20e7c-1ac4-47ab-a7f2-291a549f430cvalue-3ea09be1-3a11-441b-85a7-97f94ee30f18style",
+      "type": "default",
+      "source": "93d20e7c-1ac4-47ab-a7f2-291a549f430c",
+      "target": "3ea09be1-3a11-441b-85a7-97f94ee30f18",
+      "sourceHandle": "value",
+      "targetHandle": "style"
+    },
+    {
+      "id": "reactflow__edge-34dcbecc-956a-4e36-8b81-4d8c5b2e1392value-46b03cfb-291a-410a-b18d-28eae97d1d9ditem",
+      "type": "default",
+      "source": "34dcbecc-956a-4e36-8b81-4d8c5b2e1392",
+      "target": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+      "sourceHandle": "value",
+      "targetHandle": "item"
+    },
+    {
+      "id": "reactflow__edge-46b03cfb-291a-410a-b18d-28eae97d1d9dcollection-93d20e7c-1ac4-47ab-a7f2-291a549f430ctag_collection",
+      "type": "default",
+      "source": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+      "target": "93d20e7c-1ac4-47ab-a7f2-291a549f430c",
+      "sourceHandle": "collection",
+      "targetHandle": "tag_collection"
+    },
+    {
+      "id": "reactflow__edge-beb1b546-6d96-42c5-9576-b17e1252beb0value-46b03cfb-291a-410a-b18d-28eae97d1d9ditem",
+      "type": "default",
+      "source": "beb1b546-6d96-42c5-9576-b17e1252beb0",
+      "target": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+      "sourceHandle": "value",
+      "targetHandle": "item"
+    },
+    {
+      "id": "reactflow__edge-0c3fd4ed-ff4e-4345-8191-2b2475f0807avalue-46b03cfb-291a-410a-b18d-28eae97d1d9ditem",
+      "type": "default",
+      "source": "0c3fd4ed-ff4e-4345-8191-2b2475f0807a",
+      "target": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+      "sourceHandle": "value",
+      "targetHandle": "item"
+    },
+    {
+      "id": "reactflow__edge-6f643070-0fb5-4f61-a103-214e2269bac9value-46b03cfb-291a-410a-b18d-28eae97d1d9ditem",
+      "type": "default",
+      "source": "6f643070-0fb5-4f61-a103-214e2269bac9",
+      "target": "46b03cfb-291a-410a-b18d-28eae97d1d9d",
+      "sourceHandle": "value",
+      "targetHandle": "item"
+    }
+  ]
+}
