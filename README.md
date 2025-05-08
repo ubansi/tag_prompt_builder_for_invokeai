@@ -46,7 +46,7 @@ This node outputs the following string as output.
 This node can define simple weighted prompts.
 The output of this node is as follows
 ```
-(1girl:1.1)
+(1girl)1.1
 ```
 
 ![スクリーンショット 2025-04-29 093005](https://github.com/user-attachments/assets/e2b627ac-79f2-4226-a927-2baac85f151b)
