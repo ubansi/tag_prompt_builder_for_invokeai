@@ -48,7 +48,7 @@ class TagPromptInvocation(BaseInvocation):
         if self.weight == 1:
             tag = self.tag
         else:
-            tag: str = f"({self.tag}:{self.weight})"
+            tag: str = f"({self.tag}){self.weight}"
 
         if not self.active:
             return StringOutput(value='')
